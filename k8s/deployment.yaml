@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: okopo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: okopo
+  template:
+    metadata:
+      labels:
+        app: okopo
+    spec:
+      containers:
+      - image: okteto.dev/okopo:latest
+        name: okopo
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "689c029d-c422-4b08-ae9e-14fa377ba299"
+        - name: Vless_Path
+          value: "/sdlfjweoivls"
+        - name: Vmess_UUID
+          value: "689c029d-c422-4b08-ae9e-14fa377ba299"
+        - name: Vmess_Path
+          value: "/woeigowvms"
+        - name: Share_Path
+          value: "/v2link"
